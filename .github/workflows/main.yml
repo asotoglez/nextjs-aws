@@ -39,7 +39,5 @@ jobs:
         with:
           script: |
             const script = require(`${process.env.GITHUB_WORKSPACE}/script.js`)
-            console.log('process.env.GITHUB_WORKSPACE', process.env.GITHUB_WORKSPACE)
+            console.log('process.env.GITHUB_WORKSPACE', process.env.GITHUB_WORKSPACE, steps)
             console.log(script({github, context}))
-      - name: Get result
-        run: echo "${{steps.set-result.outputs.result}}"
