@@ -37,8 +37,8 @@ jobs:
         id: set-result
         run: npx serverless
         uses: actions/github-script@v3
-          with:
-            script: |
-              const script = require(`${process.env.GITHUB_WORKSPACE}/script.js`)
-              console.log('process.env.GITHUB_WORKSPACE', process.env.GITHUB_WORKSPACE, steps.set-result.outputs.result)
-              console.log(script({github, context}))
+        with:
+          script: |
+            const script = require(`${process.env.GITHUB_WORKSPACE}/script.js`)
+            console.log('process.env.GITHUB_WORKSPACE', process.env.GITHUB_WORKSPACE, steps.set-result.outputs.result)
+            console.log(script({github, context}))
