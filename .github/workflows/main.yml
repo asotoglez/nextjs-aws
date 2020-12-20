@@ -37,3 +37,5 @@ jobs:
         run: npx serverless
       - name: Download artifact
         uses: actions/download-artifact@v2
+          name: test
+          path: test.txt
