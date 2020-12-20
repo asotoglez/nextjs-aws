@@ -34,11 +34,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET }}
           aws-region: us-east-1
       - name: Deploy Next.js app
-        id: set-result
-        run: npx serverless
+        run: |
+          npx serverless
+          echo "${{steps.set-result.outputs.result}}"
         uses: actions/github-script@v3
-        with:
-          script: |
-            const script = require(`${process.env.GITHUB_WORKSPACE}/script.js`)
-            console.log('process.env.GITHUB_WORKSPACE', process.env.GITHUB_WORKSPACE, steps.set-result.outputs.result)
-            console.log(script({github, context}))
+        # with:
+        #   script: |
+        #     const script = require(`${process.env.GITHUB_WORKSPACE}/script.js`)
+        #     console.log('process.env.GITHUB_WORKSPACE', process.env.GITHUB_WORKSPACE, steps.set-result.outputs.result)
+        #     console.log(script({github, context}))
