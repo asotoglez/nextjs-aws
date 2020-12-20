@@ -36,9 +36,9 @@ jobs:
       - name: Deploy Next.js app
         id: set-result
         run: npx serverless
-      - uses: actions/github-script@v3
-        with:
-          script: |
-            const script = require(`${process.env.GITHUB_WORKSPACE}/script.js`)
-            console.log('process.env.GITHUB_WORKSPACE', process.env.GITHUB_WORKSPACE, steps.set-result.outputs.result)
-            console.log(script({github, context}))
+        uses: actions/github-script@v3
+          with:
+            script: |
+              const script = require(`${process.env.GITHUB_WORKSPACE}/script.js`)
+              console.log('process.env.GITHUB_WORKSPACE', process.env.GITHUB_WORKSPACE, steps.set-result.outputs.result)
+              console.log(script({github, context}))
