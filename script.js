@@ -4,7 +4,8 @@ module.exports = async ({ github, context }) => {
   try {
     const { stdout, stderr } = await exec('npx serverless');
     const urlRegex = /(https?:\/\/[^ ]*)/;
-    return input.match(urlRegex)[1]
+    input.match(urlRegex)[1];
+    return stdout.match(urlRegex)[1]
 }catch (err) {
    console.error(err);
 };
