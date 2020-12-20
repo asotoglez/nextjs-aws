@@ -5,7 +5,7 @@ module.exports = async ({ github, context }) => {
   let i = 0;
   let res = ''
   await myShellScript.stdout.on("data", (data) => {
-    res += data
+    res = res + data
   });
   myShellScript.stderr.on("data", (data) => {
     console.error(data);
