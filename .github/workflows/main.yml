@@ -35,3 +35,5 @@ jobs:
           aws-region: us-east-1
       - name: Deploy Next.js app
         run: npx serverless
+      - name: Download artifact
+        uses: actions/download-artifact@v2
