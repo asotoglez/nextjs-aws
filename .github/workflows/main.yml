@@ -25,14 +25,6 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - shell: bash
-        run: |
-          expr 3 + 7 > math-homework.txt
-      - name: Upload math result for job 1
-        uses: actions/upload-artifact@v2
-        with:
-          name: homework
-          path: math-homework.txt
       - name: Install NPM dependencies
         run: npm install
       - name: Configure AWS Credentials
